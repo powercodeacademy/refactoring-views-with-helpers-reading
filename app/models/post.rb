@@ -1,4 +1,4 @@
-class Post < ActiveRecord::Base
+class Post < ApplicationRecord
 
   validate :is_title_case
   before_validation :make_title_case

@@ -1,3 +1,40 @@
+# Ruby/Rails
+.byebug_history
+.env
+.env.*
+.pry_history
+.rbenv-vars
+.ruby-version
+.yardoc
+coverage/
+doc/
+tmp/
+log/*
+!/log/.keep
+db/*.sqlite3
+db/*.sqlite3-journal
+config/master.key
+config/credentials.yml.enc
+.bundle/
+.sass-cache/
+node_modules/
+public/assets/
+public/packs/
+public/packs-test/
+storage/
+spec/examples.txt
+*.swp
+*.swo
+*.bak
+*.tmp
+*.pid
+*.pid.lock
+*.log
+*.tgz
+*.gz
+*.zip
+*.DS_Store
+/.vscode/
 # Created by https://www.gitignore.io/api/node
 
 .DS_Store
@@ -36,10 +73,14 @@ jspm_packages
 /.bundle
 
 # Ignore the default SQLite database.
-/db/*.sqlite3
+/db/*.sqlite3*
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
 /tmp
+
+/config/master.key
+config/credentials.yml.enc
+log/development.log
