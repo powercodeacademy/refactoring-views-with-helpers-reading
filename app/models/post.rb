@@ -2,7 +2,7 @@ class Post < ApplicationRecord
 
   validate :is_title_case
   before_validation :make_title_case
-  belongs_to :author
+  belongs_to :author, optional: true
 
   private
 
