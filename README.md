@@ -84,7 +84,7 @@ reference. Okay, we can do that. Let's add it to the `edit` template.
 ```erb
 <!-- app/views/posts/edit.html.erb -->
 
-<%= form_for(@post) do |f| %>
+<%= form_with(model: @post, local: true) do |f| %>
   <label><%= @post.updated_at.strftime("Last updated %A, %b %e, at %l:%M %p") %></label><br>
   <label>Post title:</label><br>
   <%= f.text_field :title %><br>
@@ -158,8 +158,8 @@ We can also create our own helpers to solve our own problems.
 For our post's last updated label, we want to create a method that executes the
 `strftime` bit so that we can use it in our three views. But where do we put it?
 
-Helpers are generally organized by controller. If you use `rails g scaffold` or
-`rails g controller`, Rails will create a helper for your controller and put it
+Helpers are generally organized by controller. If you use `bin/rails g scaffold` or
+`bin/rails g controller`, Rails will create a helper for your controller and put it
 in the `app/helpers` directory. If we look in our helpers directory, we'll see
 `application_helper.rb`, `authors_helper.rb`, and `posts_helper.rb`. This
 matches what we have in our `controllers` directory —
@@ -211,7 +211,7 @@ Now that we have our helper, let's DRY up those views.
 ```erb
 <!-- app/views/posts/edit.html.erb -->
 
-<%= form_for(@post) do |f| %>
+<%= form_with(model: @post, local: true) do |f| %>
   <label><%= last_updated @post %></label><br>
   <label>Post title:</label><br>
   <%= f.text_field :title %><br>
