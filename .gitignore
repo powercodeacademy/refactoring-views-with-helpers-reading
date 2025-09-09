@@ -1,3 +1,5 @@
+# Rails DB
+/db/*.sqlite3*
 # Ruby/Rails
 .byebug_history
 .env
